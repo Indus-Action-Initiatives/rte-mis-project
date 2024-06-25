@@ -9,6 +9,16 @@
             "email": "skunal185@gmail.com"
         }
     ],
+    "require": {
+        "php": ">=8.1",
+        "composer/installers": "^2.0",
+        "cweagans/composer-patches": "^1.7",
+        "drupal/core-composer-scaffold": "10.2",
+        "drupal/core-project-message": "10.2",
+        "drupal/core-recommended": "10.2",
+        "drush/drush": "^12",
+        "indus-action-initiatives/rte-mis": "dev-dev"
+    },
     "require-dev": {
         "drupal/devel": "^5.1",
         "innoraft/drupal-quality-checker": "^1.0",
@@ -71,6 +81,7 @@
                 "web-root": "docroot/"
             }
         },
+        "enable-patching": true,
         "installer-paths": {
             "drush/Commands/contrib/{$name}": [
                 "type:drupal-drush"
@@ -100,8 +111,5 @@
                 "type:drupal-custom-theme"
             ]
         }
-    },
-    "require": {
-        "indus-action-initiatives/rte-mis": "dev-main"
     }
 }
