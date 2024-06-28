@@ -2,7 +2,7 @@ name: rte-mis-project
 recipe: drupal10
 
 config:
-  webroot: web
+  webroot: docroot
   via: nginx
   xdebug: true
   database: mysql:8.0
