@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Check if running inside Lando
+if [ -n "$LANDO_MOUNT" ]; then
+    echo "Running inside a Lando container. Skipping this script."
+    exit 0
+fi
+
 # Function to check if a command exists
 command_exists() {
     command -v "$1" >/dev/null 2>&1
