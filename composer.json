@@ -111,5 +111,11 @@
                 "type:drupal-custom-theme"
             ]
         }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "chmod +x scripts/post-install.sh",
+            "./scripts/post-site-install.sh"
+        ]
     }
 }
