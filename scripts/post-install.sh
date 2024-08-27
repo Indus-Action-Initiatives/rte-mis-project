@@ -41,6 +41,6 @@ fi
 echo "Executing gulp in the rte-mis-gin module..."
 cd docroot/profiles/contrib/rte-mis/modules/rte_mis_gin || exit
 npm install
-gulp scss
+npx gulp@5.0.0 scss
 
 echo "Gulp task in rte-mis-gin module completed successfully."
