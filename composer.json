@@ -39,6 +39,18 @@
         {
             "type": "package",
             "package": {
+                "name": "datatables/datatables",
+                "type": "drupal-library",
+                "version": "v1.10.21",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/DataTables/DataTables/archive/refs/heads/master.zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
                 "name": "select2/select2",
                 "type": "drupal-library",
                 "version": "4.0.13",
