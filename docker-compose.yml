@@ -1,0 +1,69 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: rte-mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - internal
+
+  php:
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    container_name: rte-php
+    env_file: .env
+    volumes:
+      - drupal-data:/var/www/html/rte-mis
+    networks:
+      - internal
+
+  drupal:
+    image: drupal:10-apache
+    container_name: rte-drupal
+    depends_on:
+      - mysql
+    restart: unless-stopped
+    networks:
+      - internal
+      - external
+    volumes:
+      - drupal-data:/var/www/html/rte-mis
+
+  webserver:
+    image: nginx:1.17.4-alpine
+    container_name: rte-nginx-server
+    depends_on:
+      - drupal
+      - php
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    volumes:
+      - drupal-data:/var/www/html/rte-mis
+      - ./nginx-conf:/etc/nginx/conf.d
+    networks:
+      - external
+
+  certbot:
+    depends_on:
+      - webserver
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - certbot-etc:/etc/letsencrypt
+      - drupal-data:/var/www/html/rte-mis
+
+networks:
+  external:
+    driver: bridge
+  internal:
+    driver: bridge
+
+volumes:
+  drupal-data:
+  db-data:
+  certbot-etc:

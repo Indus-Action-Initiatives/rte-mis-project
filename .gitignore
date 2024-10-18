@@ -9,6 +9,7 @@ docroot/*/contrib
 # Ignore configuration files that may contain sensitive information.
 docroot/sites/*/settings*.php
 docroot/sites/*/services*.yml
+.env
 
 # Ignore paths that contain user-generated content.
 docroot/sites/*/files
