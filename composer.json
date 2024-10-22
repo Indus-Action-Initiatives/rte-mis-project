@@ -13,9 +13,9 @@
         "php": ">=8.1",
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
-        "drupal/core-composer-scaffold": "10.2",
-        "drupal/core-project-message": "10.2",
-        "drupal/core-recommended": "10.2",
+        "drupal/core-composer-scaffold": "10.2.10",
+        "drupal/core-project-message": "10.2.10",
+        "drupal/core-recommended": "10.2.10",
         "drush/drush": "^12",
         "indus-action-initiatives/rte-mis": "^1.0"
     },
