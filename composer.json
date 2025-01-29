@@ -17,7 +17,7 @@
         "drupal/core-project-message": "10.2",
         "drupal/core-recommended": "10.2",
         "drush/drush": "^12",
-        "indus-action-initiatives/rte-mis": "^1.0"
+        "indus-action-initiatives/rte-mis": "^3.0"
     },
     "require-dev": {
         "drupal/devel": "^5.1",
